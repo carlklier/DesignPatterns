@@ -4,8 +4,10 @@ public class StreamingAccountTest {
     public static void main(String[] args){
         Runnable movieWatcher1 = new MovieWatcher();
         Runnable movieWatcher2 = new MovieWatcher();
+        Runnable movieWatcher3 = new MovieWatcher();
 
         new Thread(movieWatcher1).start();
         new Thread(movieWatcher2).start();
+        new Thread(movieWatcher3).start();
     }
 }

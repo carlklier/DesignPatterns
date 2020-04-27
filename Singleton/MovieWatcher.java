@@ -7,16 +7,15 @@ public class MovieWatcher implements Runnable{
     
     @Override
     public void run() {
+        Thread currentThread = Thread.currentThread();
         StreamingAccount accountInstance = StreamingAccount.getInstance();
-        System.out.println("Account ID: " + System.identityHashCode(accountInstance));
-
-        System.out.println(accountInstance.getWatchList());
+        System.out.println(currentThread.getId() + " is using Account ID: " + System.identityHashCode(accountInstance));
         
         String randomMovie = favoriteMovies[ThreadLocalRandom.current().nextInt(0, favoriteMovies.length)];
-        accountInstance.addToWatchList(randomMovie);
 
-        System.out.println("Watched Movie: " + randomMovie);
-        System.out.println(accountInstance.getWatchList());
+        accountInstance.addToWatchList(randomMovie);
+        System.out.println(currentThread.getId() + " Has Watched: " + randomMovie);
+        System.out.println(currentThread.getId() + " Has Account Watch History: " + accountInstance.getWatchList());
     }
 
 }
