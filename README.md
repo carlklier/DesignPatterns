@@ -1,3 +1,5 @@
+Need to update sources/references
+
 A place to practice basic design patterns.
 
 Basic Object Oriented Design Principles: 
